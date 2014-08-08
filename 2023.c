@@ -1,38 +1,34 @@
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
+#include<stdio.h>
+#include<string.h>
+int main()
 {
     int n, m;
     int i, j;
     int t, d;
-    int s[50];
-    int c[5];
-    int sc[50][5];
-
+    int list[50][5], stu[50], avg[5];
     while (scanf("%d%d", &n, &m) != EOF)
     {
-        memset(s, 0, sizeof(s));
-        memset(c, 0, sizeof(c));
-        memset(sc, 0, sizeof(sc));
+        memset(list, 0, sizeof(list));
+        memset(stu, 0, sizeof(stu));
+        memset(avg, 0, sizeof(avg));
         for (i = 0; i < n; i++)
         {
             for (j = 0; j < m; j++)
             {
-                scanf("%d", &sc[i][j]);
-                c[j] += sc[i][j];
-                s[i] += sc[i][j];
+                scanf("%d", &list[i][j]);
+                avg[j] += list[i][j];
+                stu[i] += list[i][j];
             }
         }
         for (i = 0; i < n; i++)
-            printf("%.2lf%c", s[i] * 1.0 / m, i < n - 1 ? ' ' : ' \n');
-        for (i = 0; i < m; i++)
-            printf("%.2lf%c", c[i] * 1.0 / n, i < m - 1 ? ' ' : ' \n');
+            printf("%.2lf%c", stu[i] *1.0/ m, i < n - 1 ? ' ' : ' \n');
+        for (j = 0; j < m; j++)
+            printf("%.2lf%c", avg[j] *1.0/ n, j< m - 1 ? ' ' : ' \n');
         for (t = i = 0; i < n; i++)
         {
             for (d = 1, j = 0; j < m; j++)
             {
-                if (sc[i][j] < 1.0 * c[j] / n)
+                if (list[i][j] < 1.0 * avg[j] / n)
                 {
                     d = 0;
                     break;
@@ -42,6 +38,5 @@ int main(void)
         }
         printf("%d\n\n", t);
     }
-
     return 0;
 }

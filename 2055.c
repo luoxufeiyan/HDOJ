@@ -1,12 +1,21 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int n, a;
-    char c;
-    scanf("%d%*c", &n);
-    while (n-- && scanf("%c%d%*c", &c, &a))
-        printf("%d\n", a + (c < 97 ? c - 'A' + 1 : 'a' - c - 1));
-    return 0;
+    char a;
+    int n,ni,num,num2;
+    scanf("%d",&n);
+    getchar();
+    for(ni=0;ni<n;ni++)
+    {
+        scanf("%c%d%*c", &a, &num);
+        if(a<97)
+        {
+            num2=a-'A'+1;
+        }
+        else
+        {
+            num2='a'-a-1;
+        }
+        printf("%d\n",num2+num);
+    }
 }
-            
-    

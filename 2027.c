@@ -8,10 +8,7 @@ int main()
     for (ti = 0; ti < t; ti++)
     {
         gets(cache);
-        memset(num, 0, 5);
-        num[2] = 0;
-        num[3] = 0;
-        num[4] = 0;
+        memset(num, 0, sizeof(num));
         len = strlen(cache);
         for (leni = 0; leni < len; leni++)
         {

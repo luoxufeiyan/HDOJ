@@ -1,27 +1,14 @@
-#include<stdio.h>
-main()
-{
- char a,b,c,d;
- while(scanf("%c %c %c",&a,&b,&c)!=EOF)
+#include <stdio.h>
+ int main()
  {
-     getchar();
-  if(a>=b)
-  {
-   if(c>=a)
-   printf("%c %c %c\n",b,a,c);
-   else if(b>=c)
-   printf("%c %c %c\n",c,b,a);
-   else if(b<c)
-   printf("%c %c %c\n",b,c,a);
-  }
-  else 
-  {
-   if(c>=b)
-   printf("%c %c %c\n",a,b,c);
-   else if(c>=a)
-   printf("%c %c %c\n",a,c,b);
-   else if(a>c)
-   printf("%c %c %c\n",c,a,b);
-  }
+ char a,b,c,d,x,y,z;
+       while(scanf("%c%c%c%c",&a,&b,&c,&d) != EOF)
+       {
+         x=a<b?a:b;    
+         x=x<c?x:c;
+         z=a>b?a:b;
+         z=z>c?z:c;
+         y=a+b+c-x-z;
+         printf("%c %c %c\n",x,y,z);
+       }
  }
-}

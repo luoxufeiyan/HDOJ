@@ -1,4 +1,4 @@
 hdoj
 ====
 
-accept code of Hangzhou Dianzi University Online Judge
+accept code of HDOJ

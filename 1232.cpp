@@ -1,35 +1,50 @@
 #include <stdio.h>
-int bin[1002];
-int findx(int x)
+#include<algorithm>
+int father[1001];
+
+int FindGF(int a)
 {
-    int r=x;
-    while(bin[r] !=r)
-        r=bin[r];
-    return r;
+	while (father[a] != a)
+		a = father[a];
+
+	return a;
 }
-void merge(int x,int y)
+
+void Branch(int a, int b)
 {
-    int fx,fy;
-    fx = findx(x);
-    fy = findx(y);
-    if(fx != fy)
-        bin[fx] = fy;
+	int fx, fy;
+
+	fx = FindGF(a);
+	fy = FindGF(b);
+
+	if (fx != fy)
+		father[fx] = fy;
 }
+
 int main()
 {
-    int n,m,i,x,y,count;
-    while(scanf("%d",&n),n)
-    {
-        for(i=1;i<=n;i++)
-            bin[i] = i;
-        for(scanf("%d",&m);m>0;m--)
-        {
-            scanf("%d %d",&x,&y);
-            merge(x,y);
-        }
-        for(count=-1, i=1;i<=n;i++)
-            if(bin[i] == i)
-                count ++;
-        printf("%d\n",count);
-    }
+	int n, m, i, x, y, ans;
+
+	while (scanf("%d", &n) && n != 0)
+	{
+		for (i = 1; i <= n; i++)
+			father[i] = i;
+
+		scanf("%d", &m);
+
+		for (i = 1; i <= m; i++)
+		{
+			scanf("%d%d", &x, &y);
+			Branch(x, y);
+		}
+
+		ans = 0;
+		for (i = 1; i <= n; i++)
+		if (i == father[i])
+			ans++;
+
+		printf("%d\n", ans-1);
+	}
+
+	return 0;
 }

@@ -2,7 +2,7 @@
 #include<algorithm>
 int father[1001];
 
-int FindGF(int a)
+int FindGF(int a)//找祖父节点 
 {
 	while (father[a] != a)
 		a = father[a];
@@ -10,7 +10,7 @@ int FindGF(int a)
 	return a;
 }
 
-void Branch(int a, int b)
+void Branch(int a, int b)//合并不同的祖父节点 
 {
 	int fx, fy;
 

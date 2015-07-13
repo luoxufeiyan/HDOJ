@@ -4,14 +4,14 @@
 int main()
 {
     int a[8000];    
-	int i,k,n,t,la;
-    while(EOF !=scanf("%d",&n))
+    int i,k,n,t,la;
+    while(~scanf("%d",&n))
     {
         if(n==0||n==1) {printf("1\n");continue;}
 
         a[0] = 1; 
         la = 1;
-        t=0;
+        t = 0;
         for(k=2; k<=n; k++)
         {
             for(i=0; i<la; i++)
@@ -22,7 +22,7 @@ int main()
             }
             if (t > 0)   
             {    
-                a[la++] = t;    
+                a[la++] = t;
                 t = 0; 
             } 
         }

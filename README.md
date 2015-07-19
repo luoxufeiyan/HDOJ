@@ -1,7 +1,13 @@
-Info
+About this repo
 ====
 
-My accept code of HDOJ.
+These are my accept code of HDOJ (Hangzhou Dianzi University Online Judge).You can find my solution report at my blog:http://www.luoxufeiyan.com/category/code/hdoj/
+
+FAQ
+====
+Clich issue to report BUG~
+
+This is a repo for myself, so please dont pull request. Thank you.
 
 Links
 ====
